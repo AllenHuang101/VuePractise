@@ -18,5 +18,5 @@ export default function useTitle(titleValue) {
   );
 
   // 返回ref值
-  return title;
+  return { title };
 }
