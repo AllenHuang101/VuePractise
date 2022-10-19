@@ -66,7 +66,7 @@ const router = createRouter({
   ],
 });
 
-// 需求: 進入到訂單葉面時，判斷用戶是否登錄
+// 需求: 進入到訂單頁面時，判斷用戶是否登錄
 // 1. 用戶沒登入，跳轉到login頁面進行登錄。
 // 2. 用戶已登入，直接進入到訂單頁面。
 // 路由導航守衛
@@ -74,7 +74,7 @@ const router = createRouter({
 router.beforeEach((to, from) => {
   const token = localStorage.getItem('token');
 
-  if (!token && to.path === '/order') {
+  if (to.path === '/order' && !token) {
     return '/login';
   }
 });
