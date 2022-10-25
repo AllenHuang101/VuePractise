@@ -38,7 +38,7 @@ export default {
   beforeMount() {
     console.log('beforeMount');
   },
-  // 4.組件templatee被掛載: 虛擬DOM -> 真實DOM
+  // 4.組件template被掛載: 虛擬DOM -> 真實DOM
   mounted() {
     console.log('mounted');
     console.log('1.獲取DOM');
