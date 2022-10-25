@@ -2,7 +2,7 @@
   <div class="app">
     <h2>當前計數: {{ counter }}</h2>
     <!-- 1.自訂義add-counter, 監聽內部的add事件 -->
-    <add-counter @add="addBtnClick"></add-counter>
+    <add-counter @add="addBtnClick" ></add-counter>
 
     <!-- 2.自訂義sub-counter, 監聽內部的sub事件 -->
     <sub-counter @sub="subBtnClick"></sub-counter>

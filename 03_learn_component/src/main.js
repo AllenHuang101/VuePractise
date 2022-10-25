@@ -1,4 +1,4 @@
 import { createApp } from 'vue';
-import App from './03_組件通訊-子傳父/App';
+import App from './07_組件插槽-作用域插槽/App';
 
 createApp(App).mount('#app');
