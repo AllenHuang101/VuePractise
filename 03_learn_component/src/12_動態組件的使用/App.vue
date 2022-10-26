@@ -14,18 +14,14 @@
       <!-- 1.第一種作法: v-if進行判斷決定要顯示哪一個組件 -->
       <template v-if="currentTab === 'home'"><home></home></template>
       <template v-if="currentTab === 'about'"><about></about></template>
-      <template v-if="currentTab === 'category'"
-        ><category></category
-      ></template>
+      <template v-if="currentTab === 'category'">
+        <category></category>
+      </template>
 
       <!-- 2.第二種作法: 動態組件 component -->
       <!-- is中的組件需要來自兩個地方: 1.全局註冊的組件 2.局部註冊的組件 -->
-      <component
-        :is="currentTab"
-        name="Allen"
-        :age="30"
-        @homeClick="homeClick"
-      ></component>
+      <component :is="currentTab" name="Allen" :age="30" @homeClick="homeClick">
+      </component>
     </div>
   </div>
 </template>
