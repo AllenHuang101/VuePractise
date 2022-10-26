@@ -1,4 +1,4 @@
 import { createApp } from 'vue';
-import App from './15_組件的v-model/App';
+import App from './16_組件的混入Mixin/App';
 
 createApp(App).mount('#app');
