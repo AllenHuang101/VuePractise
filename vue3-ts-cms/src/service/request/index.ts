@@ -31,8 +31,6 @@ class HYRequest {
     // 添加所有實例都有的攔截器
     this.instance.interceptors.request.use(
       (config) => {
-        console.log('所有實例都有的攔截器: reqeust成功')
-
         if (this.showLoading) {
           this.loading = ElLoading.service({
             lock: true,
@@ -44,15 +42,12 @@ class HYRequest {
         return config
       },
       (err) => {
-        console.log('所有實例都有的攔截器: reqeust失敗')
         return err
       }
     )
 
     this.instance.interceptors.response.use(
       (res) => {
-        console.log('所有實例都有的攔截器: response成功')
-
         // 將loading移除
         setTimeout(() => {
           this.loading?.close()
@@ -66,8 +61,6 @@ class HYRequest {
         }
       },
       (err) => {
-        console.log('所有實例都有的攔截器: response失敗')
-
         this.loading?.close()
         // 判斷不同的HttpErrorCode顯示不同的錯誤訊息及處理
         switch (err.response.status) {
@@ -114,6 +107,7 @@ class HYRequest {
   }
 
   get<T>(config: HYRequestConfig<T>): Promise<T> {
+    console.log(config)
     return this.request<T>({ ...config, method: 'GET' })
   }
 

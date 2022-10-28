@@ -1,11 +1,22 @@
 const { defineConfig } = require('@vue/cli-service')
-const path = require('path')
+// const path = require('path')
 const AutoImport = require('unplugin-auto-import/webpack')
 const Components = require('unplugin-vue-components/webpack')
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 
 module.exports = defineConfig({
   transpileDependencies: true,
+  devServer: {
+    proxy: {
+      '^/api': {
+        target: 'http://152.136.185.210:5000',
+        pathRewrite: {
+          '^/api': ''
+        },
+        changeOrigin: true
+      }
+    }
+  },
   // 1.配置方式一: CLI提供的屬性
   outputDir: './build',
   // 2.配置方式二: 和webpack屬性完全一致，最後會進行合併

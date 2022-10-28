@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from 'axios'
+import axios from 'axios'
 
 // axios 實例對象
 axios.get('http://123.207.32.32:8000/home/multidata').then((res) => {
